@@ -14,21 +14,6 @@
 3. 收集编辑数据，并汇总到excel表。
 4. 一键安装分析环境
 
-
-
-## Cite this work
-
-If this work helps, please cite my work.
-
-
-It is recommended that citing the script by a link (such as: NGS_Tools(https://doi.org/10.5281/zenodo.8243045))
-        
-        
-        
-         or refer to this page Ways to cite a GitHub Repo](https://www.wikihow.com/Cite-a-GitHub-Repository)to promote reproducibility of your work.
-
-
-
 # 打包为 Ubuntu 可执行程序（可选）
 在必须在 Linux 上构建，且建议构建机与运行机系统版本一致：
 
