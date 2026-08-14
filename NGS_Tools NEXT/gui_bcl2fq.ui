@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BCL2Fastq</class>
+ <widget class="QMainWindow" name="BCL2Fastq">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1027</width>
+    <height>1195</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>illumina下机数据拆分</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>150</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>下机数据文件夹</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="PlainTextEdit" name="plainTextEdit_readIllumina">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>250</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_chooseFolder">
+         <property name="text">
+          <string>选择文件夹</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>样品名请尽量写简洁，可以用A1,A2或者PE1,PE2,BE1这样的。禁止出现中文以及特殊符号，尤其是空格！唯一可以的特殊符号是-（不是下划线_）.文件路径也不能出现空格！如果你样品名是E-D1，那么将输出E-D1_R1.fq.gz以及E-D2_R1.fq.gz</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="inputMethodHints">
+       <set>Qt::ImhPreferNumbers</set>
+      </property>
+      <property name="title">
+       <string>基本信息</string>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QCheckBox" name="checkBox_auto_fill_col">
+         <property name="text">
+          <string>自动向下填充</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="tableWidget">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>300</height>
+          </size>
+         </property>
+         <row>
+          <property name="text">
+           <string>示例</string>
+          </property>
+         </row>
+         <column>
+          <property name="text">
+           <string>样品名</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>I5_ID</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>I5_序列</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>I7_ID</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>I7_序列</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>样品描述</string>
+          </property>
+         </column>
+         <item row="0" column="0">
+          <property name="text">
+           <string>E-D1</string>
+          </property>
+         </item>
+         <item row="0" column="1">
+          <property name="text">
+           <string>i501(可以不写)</string>
+          </property>
+         </item>
+         <item row="0" column="2">
+          <property name="text">
+           <string>AGGCTATA</string>
+          </property>
+         </item>
+         <item row="0" column="3">
+          <property name="text">
+           <string>Index2(可以不写)</string>
+          </property>
+         </item>
+         <item row="0" column="4">
+          <property name="text">
+           <string>CGATGT</string>
+          </property>
+         </item>
+         <item row="0" column="5">
+          <property name="text">
+           <string>可以不写，建议写你的样品具体是什么。尽量不要带特殊符号</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="pushButton_add_line">
+            <property name="text">
+             <string>加一行</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_del_lines">
+            <property name="text">
+             <string>删除选中行</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_import_from_sheet">
+            <property name="text">
+             <string>从表格导入</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_export_sheet">
+            <property name="text">
+             <string>导出当前表格</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_clear_table">
+            <property name="text">
+             <string>清空</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_2">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_selection">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_requirement">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>bcl2fastq安装信息：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_version">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_install_bcl2fq">
+            <property name="text">
+             <string>安装bcl2fastq</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_10">
+      <property name="title">
+       <string>操作</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_9">
+       <item>
+        <widget class="QCheckBox" name="checkBox_reI5">
+         <property name="text">
+          <string>I5反转</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_reI7">
+         <property name="text">
+          <string>I7反转</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>bcl2fastq运行参数:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_parameter">
+         <property name="text">
+          <string>--barcode-mismatches  0  --fastq-compression-level  8</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_generateFq">
+         <property name="text">
+          <string>开始拆分</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="progressBar">
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>0</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="textVisible">
+          <bool>true</bool>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="invertedAppearance">
+          <bool>false</bool>
+         </property>
+         <property name="textDirection">
+          <enum>QProgressBar::TopToBottom</enum>
+         </property>
+         <property name="format">
+          <string>%v / %m 别急，别急</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_FqDir">
+         <property name="clearButtonEnabled">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_openFqDir">
+         <property name="text">
+          <string>打开结果文件夹</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>当前选定：</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1027</width>
+     <height>28</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlainTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>plaintextedit</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

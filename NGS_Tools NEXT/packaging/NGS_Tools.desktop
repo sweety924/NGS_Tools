@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=NGS_Tools
+GenericName=NGS Amplicon-seq Toolbox
+Comment=扩增子测序NGS工具箱：bcl2fastq拆分、CRISPResso2分析（HDR/PE/BE/NHEJ）与结果汇总
+# Exec 请改成实际的绝对路径；程序会在启动目录写入 .run.sh/.tmp.xlsx 等临时文件，
+# 因此建议安装在用户家目录（例如 ~/NGS_Tools）或其它可写目录，不要装到 /opt 等只读位置。
+Exec=/home/USERNAME/NGS_Tools/NGS_Tools
+Path=/home/USERNAME/NGS_Tools
+# 如需图标，准备一张 PNG 并把路径填到这里；没有图标可整行删除。
+Icon=/home/USERNAME/NGS_Tools/icon.png
+Terminal=false
+Categories=Science;Biology;Utility;
+StartupNotify=true

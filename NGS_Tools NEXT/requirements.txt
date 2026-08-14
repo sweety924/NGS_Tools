@@ -1,0 +1,8 @@
+pyqt5
+pandas
+openpyxl
+requests
+pyinstaller
+# pyqtdarktheme 仅支持 Python <3.12 且已停止维护，本项目已改为可选依赖：
+# 缺失时程序自动退回系统默认主题。若在 Python 3.10/3.11/3.12 环境想启用暗色主题，
+# 可手动执行：pip install "pyqtdarktheme==2.1.0"
