@@ -17,7 +17,7 @@ from common import CONDA_ENV, CONDA_EXE, conda_run_args
 #   - https://mirrors.sjtug.sjtu.edu.cn/anaconda   （上海交大，推荐）
 #   - https://mirrors.aliyun.com/anaconda           （阿里云）
 # 留空字符串 "" 表示使用 conda 官方源（适合能直连 anaconda.org 的网络）。
-CONDA_MIRROR = "https://mirrors.sjtug.sjtu.edu.cn/anaconda"
+CONDA_MIRROR = "https://mirrors.pku.edu.cn/anaconda"
 
 
 def _run(args, check=True):
